@@ -1,0 +1,10 @@
+---
+applications:
+  - name: green-app
+    memory: 768M
+    instances: 1
+    routes:
+      - route: green-beverage.cfapps.io
+    path: ./target/green.jar
+    buildpacks:
+      - java_buildpack

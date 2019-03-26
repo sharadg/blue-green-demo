@@ -1,0 +1,11 @@
+---
+applications:
+  - name: blue-app
+    memory: 768M
+    instances: 1
+    routes:
+      - route: blue-beverage.cfapps.io
+      - route: perfect-summer-beverage.cfapps.io
+    path: ./target/blue.jar
+    buildpacks:
+      - java_buildpack
