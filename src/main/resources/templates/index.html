@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -34,7 +34,7 @@
             <li class="list-group-item pln">
                 <div class="row man">
                     <div class="media-middle" style="align-content: center">
-                        <img src="/images/mountain-dew-bottle.png" height="500" style="margin-left: auto; margin-right: auto; display: block "/>
+                        <img src="/images/pepsi-icon-new.jpg" height="500" style="margin-left: auto; margin-right: auto; display: block "/>
                     </div>
                 </div>
             </li>
@@ -46,9 +46,7 @@
             <a href="https://docs.pivotal.io/pivotalcf/2-4/devguide/" target="_blank">
                 <img src="/images/pcf-logo.png" width="200" alt="Pivotal Cloud Foundry" title="Pivotal Cloud Foundry"/>
                 <br/>
-                <span class="txt-c small type-neutral-4">
-              This is a Pivotal Cloud Foundry Blue Green demo application.
-            </span>
+                <span class="txt-c small type-neutral-4">This is a Pivotal Cloud Foundry Blue Green demo application.</span><span class="txt-c small type-neutral-4" th:text="${cfapp['instance_index'] != null} ? ${cfapp['instance_index']} : ''"></span>
             </a>
             <div data-ping="ping" style="display:none;"></div>
         </div>
