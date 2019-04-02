@@ -1,0 +1,10 @@
+---
+applications:
+  - name: autoscale-demo
+    memory: 768M
+    instances: 1
+    routes:
+      - route: perfect-summer-beverage.cfapps.io
+    path: ./target/green.jar
+    buildpacks:
+      - java_buildpack
