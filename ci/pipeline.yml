@@ -15,7 +15,6 @@ resources:
     source:
       host_url: {{SC_HOST_URL}}
       login: {{SC_LOGIN_KEY}}
-      project_key: {{SC_PROJECT_KEY}}
       organization: {{SC_ORGANIZATION}}
 
 jobs:
@@ -29,7 +28,9 @@ jobs:
           base_name: blue-green-demo
       - put: code-analysis
         params:
-          project_path: artifact-dir
+          project_key: {{SC_PROJECT_KEY}}
+          project_path: sonarqube-analysis-input
+          scanner_type: maven
 
   - name: qualitygate
     plan:
